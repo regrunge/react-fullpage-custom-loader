@@ -22,7 +22,7 @@ const TextLoader = (props) => {
       {props.counter && <Counter
         counter={props.counter}
         counterChars={props.counterChars}
-        styles={props.counterStyles}
+        styles={{color: styles.color, ...props.counterStyles}}
       />}
     </div>
   )

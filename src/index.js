@@ -19,6 +19,7 @@ export default class ExampleComponent extends React.PureComponent {
     counterMax: PropTypes.number,
     counterDelay: PropTypes.number,
     counterChars: PropTypes.string,
+    counterStyles: PropTypes.object,
     fadeIn: PropTypes.bool,
     startFadeOut: PropTypes.bool
   }
@@ -100,13 +101,14 @@ export default class ExampleComponent extends React.PureComponent {
       wrapperBackgroundColor,
       counter,
       counterChars,
-      startFadeOut
+      startFadeOut,
+      counterStyles
     } = this.props
 
     return (
       <div
         className={!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles}
-        style={{backgroundColor: wrapperBackgroundColor}}
+        style={{background: wrapperBackgroundColor}}
       >
         <div className={styles.LoaderContainer}>
           <SpinnerLoader color={color} size={loaderSize} loader={loaderType} />
@@ -115,6 +117,7 @@ export default class ExampleComponent extends React.PureComponent {
             sentence={this.state.sentence}
             counter={counter ? this.state.counter : null}
             counterChars={counterChars}
+            counterStyles={counterStyles}
           />
         </div>
       </div>
