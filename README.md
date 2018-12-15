@@ -11,7 +11,7 @@ npm install --save react-fullpage-custom-loader
 ```
 
 ## Example 
-For a small React templating example: `cd` to react-fullpage-custom-loader/example and `npm start`
+For a small React templating example: `cd` to react-fullpage-custom-loader/example and `npm start` or check it out [here](https://regrunge.github.io/react-fullpage-custom-loader/)
 
 ## Usage
 
