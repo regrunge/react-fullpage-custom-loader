@@ -1,10 +1,11 @@
 {
   "name": "react-fullpage-custom-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A full page loading modal with spinners and random custom text for React",
   "author": "regrunge",
   "license": "MIT",
   "repository": "regrunge/react-fullpage-custom-loader",
+  "keywords": ["react", "css loading", "css spinners"],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
