@@ -93,6 +93,12 @@ export default class App extends Component {
           <a href='https://github.com/regrunge/react-fullpage-custom-loader' target='_blank'>github</a> and
           <a href='https://www.npmjs.com/package/react-fullpage-custom-loader' target='_blank'>npm</a>
         </p>
+        <p>
+          <b>Please note that the design of this page is not "ugly" but a tribute to the year 1997.</b>
+          <blockquote>
+            I missed <pre>background: antiquewhite;</pre>, do you?
+          </blockquote>
+        </p>
         <div style={styles.rowWrapper}>
           <button onClick={this.toggleLoader} style={styles.button}>Open Loader! (theme: {this.state.theme})</button>
           <button onClick={this.toggleFadeIn} style={styles.buttonInverted}>Toggle fade In ({this.state.fadeIn ? 'on' : 'off'})

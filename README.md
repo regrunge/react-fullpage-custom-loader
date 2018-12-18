@@ -30,6 +30,20 @@ class Example extends Component {
   }
 }
 ```
+##### Pass your custom loader instead of one of the default
+```jsx
+import React, { Component } from 'react'
+
+import MyComponent from 'react-fullpage-custom-loader'
+
+class Example extends Component {
+  render () {
+    return (
+      <MyComponent customLoader={<CustomSpinnerComponent />}/>
+    )
+  }
+}
+```
 
 #### Advanced
 
@@ -48,7 +62,8 @@ const props: {
     counterChars: PropTypes.string,
     counterStyles: PropTypes.object,
     fadeIn: PropTypes.bool,
-    startFadeOut: PropTypes.bool
+    startFadeOut: PropTypes.bool,
+    customLoader: PropTypes.object
 }
 ```
 
@@ -67,6 +82,7 @@ const props: {
 | *counterStyles* | object | {...this.props.textStyles} | Use it to override the counter text properties. Accepts any React CSS style object and default to the above textStyles | `{ color: 'red', fontSize: '3em' }` |
 | *fadeIn* | boolean | `false` | If set to `true`, the loader is shown with a fade in effect on opacity (300ms ease-out) | `true` |
 | *startFadeOut* | boolean | `false` | When this is set to `true` the entire loader will start to fade out on opacity (300ms ease-in), but even if faded you must destroy the component yourself | `true` |
+| *customLoader* | `Object` / React component | `null` |  You could pass a component to be shown INSTEAD of one the loaders | `customLoader={<CustomLoader />}` |
 
 #### Notes:
 
