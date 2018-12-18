@@ -51,21 +51,21 @@ export default class App extends Component {
 
     switch (theme) {
       case 'Lime':
-        return (<Lime fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<Lime fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'RetroAndWhite':
-        return (<RetroAndWhite fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<RetroAndWhite fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'SimpleDark':
-        return (<SimpleDark fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<SimpleDark fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'SimpleLight':
-        return (<SimpleLight fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<SimpleLight fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'SoothingBeige':
-        return (<SoothingBeige fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<SoothingBeige fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'SugarRush':
-        return (<SugarRush fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<SugarRush fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       case 'Terminal':
-        return (<Terminal fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<Terminal fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
       default:
-        return (<CandyFloss fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut}/>)
+        return (<CandyFloss fadeIn={this.state.fadeIn} startFadeOut={this.state.fadeOut} />)
     }
   }
 
@@ -81,7 +81,6 @@ export default class App extends Component {
   render() {
     return (
       <div style={styles.demoWrapper}>
-
         {this.state.enableLoader && this.getTheme()}
 
         <h1>React Fullpage Custom Loader</h1>
@@ -90,8 +89,9 @@ export default class App extends Component {
           and apply your styling to it.</p>
         <p>
           This is here only for demo purposes and more explanation on how to configure and use this component are
-          at<br />
-          <a href='https://github.com/regrunge/react-fullpage-custom-loader' target='_blank'>github</a>
+          on <br />
+          <a href='https://github.com/regrunge/react-fullpage-custom-loader' target='_blank'>github</a> and
+          <a href='https://www.npmjs.com/package/react-fullpage-custom-loader' target='_blank'>npm</a>
         </p>
         <div style={styles.rowWrapper}>
           <button onClick={this.toggleLoader} style={styles.button}>Open Loader! (theme: {this.state.theme})</button>

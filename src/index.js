@@ -15,6 +15,7 @@ export default class ExampleComponent extends React.PureComponent {
     color: PropTypes.string,
     textStyles: PropTypes.object,
     wrapperBackgroundColor: PropTypes.string,
+    customLoader: PropTypes.object,
     counter: PropTypes.bool,
     counterMax: PropTypes.number,
     counterDelay: PropTypes.number,
@@ -102,7 +103,8 @@ export default class ExampleComponent extends React.PureComponent {
       counter,
       counterChars,
       startFadeOut,
-      counterStyles
+      counterStyles,
+      customLoader
     } = this.props
 
     return (
@@ -111,7 +113,7 @@ export default class ExampleComponent extends React.PureComponent {
         style={{background: wrapperBackgroundColor}}
       >
         <div className={styles.LoaderContainer}>
-          <SpinnerLoader color={color} size={loaderSize} loader={loaderType} />
+          {customLoader || <SpinnerLoader color={color} size={loaderSize} loader={loaderType} />}
           <TextLoader
             styles={textStyles}
             sentence={this.state.sentence}
