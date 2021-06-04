@@ -22,7 +22,9 @@ export default class ExampleComponent extends React.PureComponent {
     counterChars: PropTypes.string,
     counterStyles: PropTypes.object,
     fadeIn: PropTypes.bool,
-    startFadeOut: PropTypes.bool
+    startFadeOut: PropTypes.bool,
+    width: PropTypes.string,
+    height: PropTypes.string
   }
 
   state = {
@@ -104,13 +106,24 @@ export default class ExampleComponent extends React.PureComponent {
       counterChars,
       startFadeOut,
       counterStyles,
-      customLoader
+      customLoader,
+      width,
+      height
     } = this.props
+
+    const customWrapperStyle = {background: wrapperBackgroundColor}
+    if (!!width) {
+      customWrapperStyle.width = width
+    }
+
+    if (!!height) {
+      customWrapperStyle.height = height
+    }
 
     return (
       <div
         className={!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles}
-        style={{background: wrapperBackgroundColor}}
+        style={customWrapperStyle}
       >
         <div className={styles.LoaderContainer}>
           {customLoader || <SpinnerLoader color={color} size={loaderSize} loader={loaderType} />}
