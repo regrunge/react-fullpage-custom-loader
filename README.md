@@ -63,7 +63,9 @@ const props: {
     counterStyles: PropTypes.object,
     fadeIn: PropTypes.bool,
     startFadeOut: PropTypes.bool,
-    customLoader: PropTypes.object
+    customLoader: PropTypes.object,
+    width: PropTypes.string,
+    height: PropTypes.string,
 }
 ```
 
@@ -83,6 +85,8 @@ const props: {
 | *fadeIn* | boolean | `false` | If set to `true`, the loader is shown with a fade in effect on opacity (300ms ease-out) | `true` |
 | *startFadeOut* | boolean | `false` | When this is set to `true` the entire loader will start to fade out on opacity (300ms ease-in), but even if faded you must destroy the component yourself | `true` |
 | *customLoader* | `Object` / React component | `null` |  You could pass a component to be shown INSTEAD of one the loaders | `customLoader={<CustomLoader />}` |
+| *width* | string | null | a custom width for the background | '500px' or '100%' |
+| *height* | string | null | a custom height for the background | '500px' or '100%' |
 
 #### Notes:
 
