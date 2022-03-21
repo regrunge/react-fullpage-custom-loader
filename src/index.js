@@ -14,6 +14,8 @@ export default class ExampleComponent extends React.PureComponent {
     loaderSize: PropTypes.string,
     color: PropTypes.string,
     textStyles: PropTypes.object,
+    wrapperStyles: PropTypes.object,
+    wrapperClassName: PropTypes.string,
     wrapperBackgroundColor: PropTypes.string,
     customLoader: PropTypes.object,
     counter: PropTypes.bool,
@@ -101,6 +103,8 @@ export default class ExampleComponent extends React.PureComponent {
       loaderSize,
       color,
       textStyles,
+      wrapperClassName,
+      wrapperStyles,
       wrapperBackgroundColor,
       counter,
       counterChars,
@@ -111,7 +115,7 @@ export default class ExampleComponent extends React.PureComponent {
       height
     } = this.props
 
-    const customWrapperStyle = {background: wrapperBackgroundColor}
+    const customWrapperStyle = {background: wrapperBackgroundColor, ...wrapperStyles}
     if (!!width) {
       customWrapperStyle.width = width
     }
@@ -122,7 +126,7 @@ export default class ExampleComponent extends React.PureComponent {
 
     return (
       <div
-        className={!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles}
+        className={`${!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles}${!!wrapperClassName ? wrapperClassName : ""}`}
         style={customWrapperStyle}
       >
         <div className={styles.LoaderContainer}>
