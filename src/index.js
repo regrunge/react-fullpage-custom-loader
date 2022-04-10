@@ -116,6 +116,7 @@ export default class ExampleComponent extends React.PureComponent {
     } = this.props
 
     const customWrapperStyle = {background: wrapperBackgroundColor, ...wrapperStyles}
+    
     if (!!width) {
       customWrapperStyle.width = width
     }
@@ -126,7 +127,7 @@ export default class ExampleComponent extends React.PureComponent {
 
     return (
       <div
-        className={`${!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles}${!!wrapperClassName ? wrapperClassName : ""}`}
+        className={`${!startFadeOut ? this.state.wrapperStyles : fadeOutWrapperStyles} ${!!wrapperClassName ? wrapperClassName : ""}`}
         style={customWrapperStyle}
       >
         <div className={styles.LoaderContainer}>
