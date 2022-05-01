@@ -55,7 +55,10 @@ const props: {
     loaderSize: PropTypes.string,
     color: PropTypes.string,
     textStyles: PropTypes.object,
+    wrapperStyles: PropTypes.object,
+    wrapperClassName: PropTypes.string,
     wrapperBackgroundColor: PropTypes.string,
+    customLoader: PropTypes.object,
     counter: PropTypes.bool,
     counterMax: PropTypes.number,
     counterDelay: PropTypes.number,
@@ -63,28 +66,29 @@ const props: {
     counterStyles: PropTypes.object,
     fadeIn: PropTypes.bool,
     startFadeOut: PropTypes.bool,
-    customLoader: PropTypes.object,
     width: PropTypes.string,
-    height: PropTypes.string,
+    height: PropTypes.string
 }
 ```
 
 | prop | type | default | description | example |
 |---|---|---|---|---|
-| *sentences*  | Array of strings  | Random quotes form authors I like (Adams, Pratchett, Asimov, Clarke)  | You can set as many sentences you like and thanks to CSS display: preline you could insert line breaks with `\n` | `['One sentence', 'One with a \n linebreak', '"Quoting an " - author']`|
-| *loaderType* | string / enum | `ball-spin-clockwise` | A string representing one of the 52 possible animations (see list below) | `timer` |
-| *loaderSize* | string | `null` | There are 3 possible sizes: `small`, `big` and `null` for normal | `big` |
-| *color* | string | `white` | Any valid CSS color string | `rgba(0, 0, 0, 0.75)` |
-| *textStyles* | object | { ...css.stuff } | Use it to override the main text properties. Accepts any React CSS style object | `{ color: 'red', fontSize: '3em' }`|
+| *sentences*              | Array of strings  | Random quotes form authors I like (Adams, Pratchett, Asimov, Clarke)  | You can set as many sentences you like and thanks to CSS display: preline you could insert line breaks with `\n` | `['One sentence', 'One with a \n linebreak', '"Quoting an " - author']`|
+| *loaderType*             | string / enum | `ball-spin-clockwise` | A string representing one of the 52 possible animations (see list below) | `timer` |
+| *loaderSize*             | string | `null` | There are 3 possible sizes: `small`, `big` and `null` for normal | `big` |
+| *color*                  | string | `white` | Any valid CSS color string | `rgba(0, 0, 0, 0.75)` |
+| *textStyles*             | object | { ...css.stuff } | Use it to override the main text properties. Accepts any React CSS style object | `{ color: 'red', fontSize: '3em' }`|
 | *wrapperBackgroundColor* | string | `rgba(0,0,0,0.75)` | Any valid CSS for property `background` will work, even gradients and RGBA | `black` |
-| *counter* | boolean | `false` | You can show a counter that is either a number representing the cycles or a series of characters | `true` |
-| *counterMax* | integer | `15` | The maximum number of cycles to stop randomizing sentences | `15` |
-| *counterDelay* | integer | `3000` | The number of milliseconds before a new cycle will throw a random to show a new sentence | `1000` |
-| *counterChars* | string | `.` | A series of characters to be shown in the counter zone adding one every cycle | 😅 |
-| *counterStyles* | object | {...this.props.textStyles} | Use it to override the counter text properties. Accepts any React CSS style object and default to the above textStyles | `{ color: 'red', fontSize: '3em' }` |
-| *fadeIn* | boolean | `false` | If set to `true`, the loader is shown with a fade in effect on opacity (300ms ease-out) | `true` |
-| *startFadeOut* | boolean | `false` | When this is set to `true` the entire loader will start to fade out on opacity (300ms ease-in), but even if faded you must destroy the component yourself | `true` |
-| *customLoader* | `Object` / React component | `null` |  You could pass a component to be shown INSTEAD of one the loaders | `customLoader={<CustomLoader />}` |
+| *wrapperStyles* | object | `null` | Any valid CSS property will work, used when you want to add other CSS properties beside `background` | `{ border: '3em solid red' }` |
+| *wrapperClassName* | string | `""` | A string with the name of your CSS class. This is handful if you want an external stylesheet file to style the wrapper. | `my-custom-page-loader` |
+| *counter*                | boolean | `false` | You can show a counter that is either a number representing the cycles or a series of characters | `true` |
+| *counterMax*             | integer | `15` | The maximum number of cycles to stop randomizing sentences | `15` |
+| *counterDelay*           | integer | `3000` | The number of milliseconds before a new cycle will throw a random to show a new sentence | `1000` |
+| *counterChars*           | string | `.` | A series of characters to be shown in the counter zone adding one every cycle | 😅 |
+| *counterStyles*          | object | {...this.props.textStyles} | Use it to override the counter text properties. Accepts any React CSS style object and default to the above textStyles | `{ color: 'red', fontSize: '3em' }` |
+| *fadeIn*                 | boolean | `false` | If set to `true`, the loader is shown with a fade in effect on opacity (300ms ease-out) | `true` |
+| *startFadeOut*           | boolean | `false` | When this is set to `true` the entire loader will start to fade out on opacity (300ms ease-in), but even if faded you must destroy the component yourself | `true` |
+| *customLoader*    | `Object` / React component | `null` |  You could pass a component to be shown INSTEAD of one the loaders | `customLoader={<CustomLoader />}` |
 | *width* | string | null | a custom width for the background | '500px' or '100%' |
 | *height* | string | null | a custom height for the background | '500px' or '100%' |
 
