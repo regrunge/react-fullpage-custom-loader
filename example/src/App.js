@@ -96,7 +96,7 @@ export default class App extends Component {
         <p>
           <b>Please note that the design of this page is not "ugly" but a tribute to the year 1997.</b>
           <blockquote>
-            I missed <pre>background: antiquewhite;</pre>, do you?
+            I missed <pre>background: antiquewhite;</pre> don't you?
           </blockquote>
         </p>
         <div style={styles.rowWrapper}>
